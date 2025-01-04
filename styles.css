@@ -1,7 +1,7 @@
 :root {
-    --text-color: #1a1c20;
+    --text-color: #2D2D2D;
     --link-color: #4a76ee;
-    --background-color: #eeeff1;
+    --background-color: #F9FAFB;
 }
 
 * {
@@ -15,8 +15,10 @@ html {
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background-color: var(--background-color);
+    text-emphasis: none;
+    color: #2D2D2D;
 
 }
 
@@ -66,10 +68,14 @@ nav .right a span {
     gap: 40px;
 }
 
-.profile .text h2 {
+.profile .text p {
+    font-size: 20px;
+}
+
+.profile .text .typing {
+    color: #333333;
     font-size: 35px;
-    border-right: 2px solid #333;
-    animation: blink 0.7s step-end infinite;
+    animation: blink 0.7s step-end 20;
 }
 
 @keyframes blink {
@@ -81,8 +87,8 @@ nav .right a span {
     }
 }
 
-@keyframes typing {
-    50% { border-color: transparent;}
+.hide-cursor {
+    border-right: none;
 }
 
 .profile .text {
@@ -108,16 +114,104 @@ nav .right a span {
     border: 2px solid var(--text-color);
 }
 
-.profile .headshot { 
-    flex: 2;
-    display: flex;
-    justify-content: right;
+.profile .dot-container {
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    position: relative; /* Position relative to the slideshow container */
+    left: 0;
+    right: 0;
+    z-index: 1; /* Ensure it appears above the image */
 }
 
-.profile .headshot img { 
-    width: 350px;
-    border-radius: 50%;
+.profile .slideshow-container { 
+    position: relative;
+    display: flex;
+    flex: 2;
+    justify-content: center;
+    align-items: center;
+    width: 400px; /* Match the image width */
+    margin: 0 auto; /* Center the slideshow container */
 }
+
+.profile .slideshow-container .mySlides { 
+    justify-content: center;
+    display: none;
+    border-radius: 10px;
+    width: auto; /* Automatically adjusts width */
+    height: 500px; /* Fixed height */
+    object-fit: fill; /* Ensures the whole image is visible */
+}
+
+.profile .slideshow-container .mySlides img {
+    border-radius: 10px;
+    display: block; /* Ensures proper alignment */
+    margin: 0 auto; /* Centers the image */
+    height: 500px;
+    max-width: 100%; /* Ensures the image doesn't overflow */
+    object-fit: fill; /* Makes sure the image fills the container */
+}
+
+.profile .slideshow-container .prev, .profile .slideshow-container .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    
+}
+
+.profile .slideshow-container .prev {
+    left: 10px;
+}
+.profile .slideshow-container  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+    
+}
+
+.profile .slideshow-container .prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+.profile .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: gray;
+    border-radius: 50%;
+    display: inline-block;
+    transition: var(--background-color) 0.6s ease;
+}
+
+
+.profile .dot:hover {
+    background-color: lightgray; /* Change color on hover */
+}
+
+.profile .dot.active {
+    background-color: black; /* Active dot color */
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 0.75s;
+  }
+  
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+  
+
 
 /* SECTION 2: Skills */
 .skills {

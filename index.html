@@ -7,7 +7,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@400;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -43,11 +43,13 @@
         <!--Main Profile -->
         <section class= "profile">
             <div class = "text">
-                <h2> Hi, I'm Greg 👋</h2>
+                <h2 class="typing">Hi, I'm Greg.</h2>
                 <p>
                     I'm currently a 3rd year student studying a combined major in Business & Computer Science (BUCS) at the University of British Columbia.
-                    I'm super passionate about building innovative software that provide solutions to real-world problems.
-
+                    I'm super passionate about building innovative software that provides solutions to real-world problems.
+                    <br>
+                    <br>
+                    Recently, I spent 4 months in 2024 working as a software developer intern at Stay Fresh, helping them build their mobile app using React Native, Javascript and Node.js.
                 </p>
                 <div class = "links">
                     <a href="#skills">
@@ -68,12 +70,34 @@
                     </a>
 
                 </div>
-                <p> WRITE ABOUT MORE STUFF HERE, ABOUT MYSELF</p>
+                <p>
+                    Outside of school and work, you can find me playing basketball, working out, and eating out with friends.
+                    I also love music, fashion and I'm a huge fan of the NBA. 
+                </p>
                  </div>
-                 <div class = "headshot"> 
-                    <img src = "images/hero-headshot.webp" alt = "headshot">
+                 <div class = 'outside-container'>
+                 <div class = "slideshow-container"> 
+                    <div class="mySlides fade ">
+                        <img src = "images/pic1.webp" alt = "headshot">
+                    </div>
+                    <div class="mySlides fade ">
+                        <img src = "images/pic2.webp" alt = "headshot">
+                    </div>
+                    <div class="mySlides fade ">
+                        <img src = "images/pic3.webp" alt = "headshot">
+                    </div>
+
+                    <a class = "prev" onclick = "plusSlides(-1)">&#10094</a>
+                    <a class = "next" onclick = "plusSlides(+1)">&#10095</a>
                 </div>
-            
+                <br>
+                <div class="dot-container">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+            </div>
+
         </section>
 
         <!--Skills -->
@@ -81,7 +105,7 @@
             <h2> Skills</h2>
             <div class="text">
                 I'm always striving to expand my skills and knowledge in full-stack development and machine learning. Here are some of the languages, frameworks, and concepts I’m familiar with:
-               
+               python flask react sql mongodb java c c++
             </div>
             <div class="cells">
                 <div class="cell">
@@ -128,7 +152,7 @@
                     <span >
                         Tourist Attraction Application
                     </span>
-                    <p> </p>
+                    <p> Find Unknown Destinations!</p>
                 </div>
             </a>
             <a href = "https://github.com/gregoryliu05/schedule-maker" target="_blank" rel="noopener noreferrer">
