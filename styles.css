@@ -100,6 +100,7 @@ nav .right a span {
     border-radius: 5px;
     margin-right: 10px;
     transition: .1s;
+    margin-bottom: 20px;
 }
 
 .profile .text .links a:hover {
@@ -199,10 +200,19 @@ nav .right a span {
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
+.projects .cells .cell img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    border-radius: 2px;
+}
+
+
 .projects .cells .cell span {
     display: block;
     font-weight: 600;
-    font-size: 1.2rem;
+    font-size: 22.5px;
     margin-bottom: 10px;
     color: #333;
 }
@@ -213,12 +223,6 @@ nav .right a span {
     color: #666;
 }
 
-.projects .cells .cell img {
-    width: 80px;
-    height: auto;
-    margin-bottom: 15px;
-    border-radius: 8px;
-}
 
 /* SECTION 4 CONTACT*/
 .contact h2 {
@@ -262,6 +266,10 @@ nav .right a span {
     .profile .headshot img {
         width: 300px;
 
+    }
+
+    .projects .cells {
+        flex-direction: column-reverse;
     }
 }
 
