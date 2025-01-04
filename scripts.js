@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (index < text.length) {
                 element.textContent += text.charAt(index);
                 index++;
-                setTimeout(type, 10000); // Adjust typing speed here (in milliseconds)
+                setTimeout(type, 50); // Adjust typing speed here (in milliseconds)
             }
         };
 

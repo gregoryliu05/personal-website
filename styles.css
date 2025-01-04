@@ -66,13 +66,13 @@ nav .right a span {
     gap: 40px;
 }
 
-.profile h2 {
-    border-right: 2px solid #333; /* Simulates a typing cursor */
-    animation: typing 2s,
-    cursor .4s step-end infinite alternate;
+.profile .text h2 {
+    font-size: 35px;
+    border-right: 2px solid #333;
+    animation: blink 0.7s step-end infinite;
 }
 
-@keyframes cursor {
+@keyframes blink {
     from, to {
         border-color: transparent;
     }
