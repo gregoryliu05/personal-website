@@ -147,6 +147,7 @@ nav .right a span {
     display: block; /* Ensures proper alignment */
     margin: 0 auto; /* Centers the image */
     height: 500px;
+    align-self: center;
     max-width: 100%; /* Ensures the image doesn't overflow */
     object-fit: fill; /* Makes sure the image fills the container */
 }
@@ -212,13 +213,79 @@ nav .right a span {
   }
   
 
+/* Experience */
+.experience {
+    justify-content: space-between;
+    padding: 0 50px;
+    margin-bottom: 75px;
+}
+
+.experience h2 {
+    text-align: center;
+    font-size: 2.5rem; /* Modern, responsive size */
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333333; /* Dark gray for better readability */
+}
+
+.experience .cells {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px; /* Add spacing between cards */
+}
+
+.experience .cell {
+    border-radius: 15px; /* Rounded corners for a modern look */
+    border: 1.5px solid #d3d3d3;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 20px 30px;
+    width: 90%; /* Responsive width for smaller screens */
+    max-width: 800px; /* Maximum width for consistency */
+    background-color: #ffffff; /* White background for clarity */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover effects */
+}
+
+.experience .cell:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.experience .cell .top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px; /* Add more spacing for clarity */
+}
+
+.experience .cell .top .title {
+    font-size: 1.5rem; /* Emphasize the title */
+    font-weight: bold;
+}
+
+.experience .cell .top .date {
+    font-size: 1rem;
+    color: #888888; /* Subtle gray for dates */
+    font-style: italic; /* Italicize dates for distinction */
+}
+
+.experience .cell .text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555555; /* Subtle gray for body text */
+    text-align: justify; /* Justify text for a clean block layout */
+}
 
 /* SECTION 2: Skills */
 .skills {
     justify-content: space-between;
     padding: 0 50px;
     margin-bottom: 75px;
+    overflow: hidden;
+    white-space: nowrap;
+}
 
+.skills .carousel {
+    display: flex;
 }
 
 .skills h2 {
@@ -232,22 +299,37 @@ nav .right a span {
     margin-bottom: 20px;
 }
 
-.skills .cells  {
+
+.skills .carousel .cells  {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    position: relative;
+    animation: bannermove 5s infinite linear;
+    width: fit-content;
 }
 
-.skills .cells .cell  {
+@keyframes bannermove {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  
+
+  .skills .carousel .cells .cell {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: white;
     gap: 10px;
-    width: 200px;
-    padding: 10px 20px;
+    width: 75px;
+    padding: 10px;
     border: 1.5px solid #d3d3d3;
     border-radius: 5px;
-    margin: 10px;
+    margin: 5px;
+    flex-shrink: 0; 
 }
 
 
@@ -265,6 +347,9 @@ nav .right a span {
 }
 
 /* SECTION 3: Projects */
+.projects {
+    justify-content: center;
+}
 .projects h2 {
     justify-content: center;
     text-align: center;
@@ -352,6 +437,8 @@ nav .right a span {
     }
 }
 
+
+
 @media (max-width: 740px) {
     /* SECTION 1: Main profile */
     .profile {
@@ -361,9 +448,26 @@ nav .right a span {
         width: 300px;
 
     }
-
+    /* SECTION 1: Projects */
+    .projects {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centers the entire projects section */
+        justify-content: center; /* Vertically centers content if needed */
+    }
     .projects .cells {
-        flex-direction: column-reverse;
+        display: flex;
+        flex-direction: column; /* Ensures projects stack vertically */
+        align-items: center; /* Centers each project card */
+        gap: 20px; /* Adds spacing between project cards */
+        width: 100%; /* Ensures the container spans the full width */
+    }
+
+    .projects .cell {
+        max-width: 400px; /* Limits the width of each project card */
+        width: 90%; /* Responsive width for smaller screens */
+        margin: 0 auto; /* Centers the project card horizontally */
+        text-align: center; /* Centers text and content inside cards */
     }
 }
 
