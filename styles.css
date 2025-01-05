@@ -349,6 +349,7 @@ nav .right a span {
 /* SECTION 3: Projects */
 .projects {
     justify-content: center;
+    padding-bottom: 50px;
 }
 .projects h2 {
     justify-content: center;
